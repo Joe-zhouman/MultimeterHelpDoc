@@ -1,7 +1,97 @@
 {
-    "spellright.language": [],
-    "spellright.documentTypes": [
-        "markdown",
-        "plaintext"
+    "latex-workshop.latex.tools": [
+            {
+                // 编译工具和命令
+                "name": "xelatex",
+                "command": "xelatex",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "-pdf",
+                    "%DOCFILE%"
+                ]
+            },
+    //         {
+    //             "name": "pdflatex",
+    //             "command": "pdflatex",
+    //             "args": [
+    //                 "-synctex=1",
+    //                 "-interaction=nonstopmode",
+    //                 "-file-line-error",
+    //                 "%DOCFILE%"
+    //             ]
+    //         },
+    //         {
+    //             "name": "bibtex",
+    //             "command": "bibtex",
+    //             "args": [
+    //                 "%DOCFILE%"
+    //             ]
+    //         }
+        ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex ➞ bibtex ➞ xelatex × 2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "Compile Rnw files",
+            "tools": [
+                "rnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "Compile Jnw files",
+            "tools": [
+                "jnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        }
     ]
 }
