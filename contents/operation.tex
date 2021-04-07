@@ -22,9 +22,9 @@
 
 在对应栏输入账号密码后，按\textcolor{red}{确认登录}按钮即可进入测试方法选择(见\nameref{subsec:testMethods})，
 按\textcolor{red}{取消登录}按钮会直接退出本软件。
-\begin{note}
+\begin{tips}{账户密码}{UserAndPassword}
     当前版本不支持用户的注册。在当前版本中\textcolor{red}{普通用户}无需账号密码即可登录，\textcolor{red}{高级用户}的账号密码均为\textcolor{red}{admin}。
-\end{note}
+\end{tips}
 \subsection{测试方法\label{subsec:testMethods}}
 本综合测试平台共支持四种测试方法：
 \begin{itemize}
@@ -103,10 +103,10 @@
     \caption{ 确定参数按钮 \label{fig:ensurePara}}
 \end{figure}
 
-\begin{note}
+\begin{tips}{错误弹窗}{inputParaError}
     若输入的参数有误，系统会弹出错误提示弹窗，如\figref{fig:errorParaSet}所示。此时请仔细检查设置的数据，
     修改正确后再保存。参数可能的错误原因及相应弹窗消息列在表\ref{tab:errorInfoNormalUser}中。
-\end{note}
+\end{tips}
 
 \begin{figure}[H]
     \centering
@@ -132,12 +132,12 @@
         \bottomrule
     \end{tabular}
 \end{table}
-\begin{note}
+\begin{tips}{参数输入}{inputPara}
     \begin{itemize}
         \item 参数输入框内输入的空格会被忽略，如在频道框内输入201，2\ 01，20\ 1，201\ 等均可正确识别为201。
         \item 若无错误弹窗出现，表明参数输入框内的参数全部正确，此时可开启测试。
     \end{itemize}
-\end{note}
+\end{tips}
 \subsection{运行}
 当测试参数保存成功后，按下\textcolor{red}{运行}按钮后可开始进行检测。若没有修改参数，测试按当前显示的参数进行。
 此后，运行按钮变为\textcolor{red}{结束}按钮，同时页面变为显示实时温度的图表。如\figref{fig:tempChart}所示。
@@ -183,9 +183,9 @@
     \caption{  导出结果 \label{fig:exportResult}}
 \end{figure}
 \subsection{高级用户模式\label{subsec:advancedUser}}
-\begin{note}
+\begin{tips}{高级模式}{advancedMode}
     高级模式下可供修改的参数为系统级的修改，可能导致软件无法正常使用，除非您充分了解自己的目的，否则不要轻易修改。
-\end{note}
+\end{tips}
 \subsubsection*{测试参数修改}
 相比\textcolor{red}{普通模式}，\textcolor{red}{高级模式}还可以对热流计的参数进行修改。
 \subsubsection*{串口设置修改}
@@ -212,9 +212,9 @@
     \includegraphics[width=1\textwidth]{operation/serialPortType.png}
     \caption{  串口类型查看 \label{fig:serialPortType}}
 \end{figure}
-\begin{note}
+\begin{tips}{串口类型}{serialPortType}
     有些热阻仪使用的是USB转接串口，请于\textcolor{red}{计算机>设备管理器>通用串行总线控制器}查看。
-\end{note}
+\end{tips}
 而串口波特率可通过右键查看串口\textcolor{red}{属性}获取，如\figref{fig:serialPortProp}所示，当前串口的波特率为9600。
 \begin{figure}[H]
     \centering
@@ -222,9 +222,9 @@
     \caption{  串口属性查看 \label{fig:serialPortProp}}
 \end{figure}
 数据保存频率是指测试结果文件内包含的数组组数，如设置成50，则每个结果文件内包含50组数据。
-\begin{note}
-    当前版本仅支持将该数值设为50~200，若超过该范围，软件将显示错误弹窗。
-\end{note}
+\begin{tips}{频率范围}{saveFreqRange}
+    当前版本仅支持将该数值设在50至200之间，若超过该范围，软件将显示错误弹窗。
+\end{tips}
 \subsubsection*{标定参数修改}
 点击\textcolor{red}{探头设置}（如\figref{fig:btnProbePara}）按钮可对温度探头的标定参数进行设置。
 \begin{figure}[H]
@@ -238,9 +238,9 @@
     \item K型热电偶探头，特化的电压探头，在本热阻仪的测试温度范围内为线性关系，精度较高。
     \item 四线热敏电阻探头，需要三个参数，精度最高。
 \end{itemize}
-\begin{note}
+\begin{tips}{温度探头}{probeType}
     当前版本温度探头均为K型热电偶。
-\end{note}
+\end{tips}
 要修改标定参数，直接点击对应参数位置即可进行修改。
 若要修改探头类型，可如\figref{fig:probeTypeChange}在探头类型处下拉进行更改。
 \begin{figure}[H]
@@ -249,9 +249,9 @@
     \caption{  探头类型修改 \label{fig:probeTypeChange}}
 \end{figure}
 修改完毕后，按\textcolor{red}{确认修改}
-\begin{note}
+\begin{tips}{标定参数修改}{probeParaModify}
     标定参数是对实验精度影响最为明显的数值，再次提醒使用者谨慎修改。
-\end{note}
+\end{tips}
 在修改完后，之前的设置会被自动备份到根目录下的\textcolor{red}{bak}文件夹，备份文件的名称为
 \begin{lstlisting}
     sys.ini.<修改时间>.bak
@@ -290,9 +290,9 @@
     \item 本软件计算得到的所有温度数据文件
     \item 用于计算测试结果的\textcolor{red}{.rst}文件
 \end{itemize}
-\begin{note}
+\begin{tips}{注意}
     在数据采集过程中，请不要打开以上文件，否则会影响数据的写入。
-\end{note}
+\end{tips}
 \subsubsection*{原始数据文件}
 原始数据文件的命名方式为\textcolor{red}{<测试方法>-OriginalDataAutoSave.csv}
 \begin{example}
@@ -320,10 +320,10 @@
     名为\textcolor{red}{ITC-TempAutoSave.csv}的文件中。
 \end{example}
 文件的第一列为数据的序号，其余列为首行对应频道计算得到的温度数据。
-\begin{note}
+\begin{tips}{注意}
     温度数据中，频道按其实际的位置从上到下排列，因此，正常情况下，其数值应该从左到右递减。
     如果发现反常数据的存在，那么该次试验可能存在问题。
-\end{note}
+\end{tips}
 
 \subsubsection*{测试结果文件}
 测试结果文件的命名方式为\textcolor{red}{<测试方法>-<所含最后一组数据的序号>.rst}
