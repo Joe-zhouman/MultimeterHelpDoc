@@ -1,4 +1,4 @@
-\chapter{系统操作}
+\chapter{系统操作\label{ch:operation}}
 \section{系统起动}
 \begin{itemize}
     \item 在桌面找到\textcolor{red}{multimeter.exe}的快捷方式
@@ -13,9 +13,9 @@
     \item 高级用户
 \end{itemize}
 使用者可通过下拉选项选择。
-\begin{figure}[htbp]
+\begin{figure}[!h]
     \centering
-    \includegraphics[width=0.8\textwidth]{operation/login.png}
+    \includegraphics[width=0.6\textwidth]{operation/login.png}
     \caption{ 用户登录 \label{fig:login}}
 \end{figure}
 相对\textcolor{red}{普通用户}，\textcolor{red}{高级用户}可以进行更多系统级的设置，详见\ref{subsec:advancedUser}一节。
@@ -33,7 +33,7 @@
     \item 热流计间热界面材料测试 (ITM)
     \item 固-固试件间热界面材料测试 (ITMS)
 \end{itemize}
-\begin{figure}[htbp]
+\begin{figure}[!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/chooseMethod.png}
     \caption{ 测试方法选择 \label{fig:chooseMethod}}
@@ -63,7 +63,7 @@
 \subsection{切换测试方法}
 在进入某一测试方法的页面后，若要改变测试方法，可点击\textcolor{red}{切换方法}按钮（如\figref{fig:btnSwitchMethod}所示）
 返回至方法选择界面（\figref{fig:chooseMethod}）。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/switchMethod.png}
     \caption{ 切换方法按钮 \label{fig:btnSwitchMethod}}
@@ -73,7 +73,7 @@
 在选定测试方法后，可通过\textcolor{red}{修改参数}按钮（如\figref{fig:btnChangePara}所示）修改实验的相关参数。
 可供修改的参数在不同用户模式下也不相同。
 \textcolor{red}{普通用户}模式不支持热流计属性的修改，而\textcolor{red}{高级用户}模式支持热流计属性的修改。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/changePara.png}
     \caption{ 修改参数按钮 \label{fig:btnChangePara}}
@@ -97,7 +97,7 @@
 当修改对应参数后，按\textcolor{red}{确定参数}按钮，若无错误消息提示，则参数保存成功。
 设置会保存在系统内，下一次实验会使用相同的参数。若无需改变参数，则可跳过该按钮，直接开始测试。
 讲频道设为*将不启用测试点位，此时对应的位置坐标也要设为*，其他点位的位置坐标也要做相应的改变。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/ensurePara.png}
     \caption{ 确定参数按钮 \label{fig:ensurePara}}
@@ -108,9 +108,9 @@
     修改正确后再保存。参数可能的错误原因及相应弹窗消息列在表\ref{tab:errorInfoNormalUser}中。
 \end{note}
 
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
-    \includegraphics[width=1\textwidth]{operation/errorParaSet.png}
+    \includegraphics[width=0.4\textwidth]{operation/errorParaSet.png}
     \caption{ 参数设置错误时的弹窗 \label{fig:errorParaSet}}
 \end{figure}
 \begin{table}[htbp]
@@ -125,8 +125,10 @@
                                         &            & 通道不可用                                  \\
         xx的测温点太少                  & chn        & 组件xx已启用的点位小于3个                   \\
         存在除相同的频道                & chn        & 存在被重复使用的频道。                      \\
-        xx未启用探测点的位置坐标应设为* & mm         & 当测试点位未启用时，对应的位置坐标未设置为* \\
-        xx已启用探测点的位置坐标被设为* & mm         & 已启用的测试点位对应的位置坐标被设置为*     \\
+        xx未启用探测点的 & mm         & 当测试点位未启用时，对应的位置坐标未设置为* \\
+        位置坐标应设为*& & \\
+        xx已启用探测点的 & mm         & 已启用的测试点位对应的位置坐标被设置为*     \\
+        位置坐标被设为* & & \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -139,7 +141,7 @@
 \subsection{运行}
 当测试参数保存成功后，按下\textcolor{red}{运行}按钮后可开始进行检测。若没有修改参数，测试按当前显示的参数进行。
 此后，运行按钮变为\textcolor{red}{结束}按钮，同时页面变为显示实时温度的图表。如\figref{fig:tempChart}所示。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{example/KAPPA/chartEdit.png}
     \caption{ 温度监视窗口 \label{fig:tempChart}}
@@ -149,20 +151,20 @@
 
 \subsection{当前测试}
 若当前实验至少保存了一组数据，并且测试已停止数据采集时，可以按下\textcolor{red}{当前测试}按钮显示当前实验的结果。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/currentTest.png}
     \caption{ 当前测试按钮 \label{fig:btnCurrentTest}}
 \end{figure}
 \subsection{历史测试}
 当测试没有进行时，可以按下\textcolor{red}{历史测试}按钮计算以往实验的结果。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/historicalTest.png}
     \caption{ 历史测试按钮 \label{fig:btnHistoricalTest}}
 \end{figure}
 按下按钮后将显示如\figref{fig:chooseData}的文件选择对话框。选择任意实验保存的数据结果文件，即\textcolor{red}{.rst}文件，即可计算该次实验的结果。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/chooseData.png}
     \caption{  测试文件选择对话框 \label{fig:chooseData}}
@@ -170,12 +172,12 @@
 \subsection{导出结果}
 当计算出结果后，点击如\figref{fig:btnExportResult}的\textcolor{red}{导出结果}按钮，可将计算结果以图片的形式导出，如\figref{fig:exportResult}所示。
 
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/exportResult.png}
     \caption{  导出结果按钮 \label{fig:btnExportResult}}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{example/KAPPA/exportResult.png}
     \caption{  导出结果 \label{fig:exportResult}}
@@ -188,7 +190,7 @@
 相比\textcolor{red}{普通模式}，\textcolor{red}{高级模式}还可以对热流计的参数进行修改。
 \subsubsection*{串口设置修改}
 点击\textcolor{red}{串口设置}（如\figref{fig:btnSerialPortPara}）按钮可对串口的一些属性进行设置。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/serialPortPara.png}
     \caption{  串口参数按钮 \label{fig:btnSerialPortPara}}
@@ -199,13 +201,13 @@
     \item 串口波特率
     \item 串口数据保存频率
 \end{itemize}
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
-    \includegraphics[width=1\textwidth]{operation/seialPortSetting.png}
+    \includegraphics[width=0.4\textwidth]{operation/serialPortSettings.png}
     \caption{  串口参数设置 \label{fig:serialPortSetting}}
 \end{figure}
 串口类型可在\textcolor{red}{计算机>设备管理器>端口}查看，如\figref{fig:serialPortType}，当前串口的类型为COM3。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/serialPortType.png}
     \caption{  串口类型查看 \label{fig:serialPortType}}
@@ -214,10 +216,10 @@
     有些热阻仪使用的是USB转接串口，请于\textcolor{red}{计算机>设备管理器>通用串行总线控制器}查看。
 \end{note}
 而串口波特率可通过右键查看串口\textcolor{red}{属性}获取，如\figref{fig:serialPortProp}所示，当前串口的波特率为9600。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
-    \includegraphics[width=1\textwidth]{operation/serialPortProp.png}
-    \caption{  串口属性查看 \label{fig:serialPortPara}}
+    \includegraphics[width=0.6\textwidth]{operation/serialPortProp.png}
+    \caption{  串口属性查看 \label{fig:serialPortProp}}
 \end{figure}
 数据保存频率是指测试结果文件内包含的数组组数，如设置成50，则每个结果文件内包含50组数据。
 \begin{note}
@@ -225,7 +227,7 @@
 \end{note}
 \subsubsection*{标定参数修改}
 点击\textcolor{red}{探头设置}（如\figref{fig:btnProbePara}）按钮可对温度探头的标定参数进行设置。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
     \includegraphics[width=1\textwidth]{operation/probePara.png}
     \caption{  探头设置按钮 \label{fig:btnProbePara}}
@@ -241,12 +243,21 @@
 \end{note}
 要修改标定参数，直接点击对应参数位置即可进行修改。
 若要修改探头类型，可如\figref{fig:probeTypeChange}在探头类型处下拉进行更改。
-\begin{figure}[htbp]
+\begin{figure}!h]
     \centering
-    \includegraphics[width=1\textwidth]{operation/probeTypeChange.png}
+    \includegraphics[width=0.4\textwidth]{operation/probeTypeChange.png}
     \caption{  探头类型修改 \label{fig:probeTypeChange}}
 \end{figure}
 修改完毕后，按\textcolor{red}{确认修改}
+\begin{note}
+    标定参数是对实验精度影响最为明显的数值，再次提醒使用者谨慎修改。
+\end{note}
+在修改完后，之前的设置会被自动备份到根目录下的\textcolor{red}{bak}文件夹，备份文件的名称为
+\begin{lstlisting}
+    sys.ini.<修改时间>.bak
+\end{lstlisting}
+若要回退到某时间的设置，将对应的备份文件重命名为\textcolor{red}{sys.ini}，并替换根目录内的同名文件夹。
+\par 若要放弃修改，按取消修改，则系统会放弃所有未保存的修改，并退出修改界面。
 % \subsection{温度图表}
 % \subsection{隐藏图表}
 % \subsubsection*{频道数据隐藏}
