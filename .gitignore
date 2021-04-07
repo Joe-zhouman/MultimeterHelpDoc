@@ -253,4 +253,7 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
-/.vs/MultimeterHelpDoc/v16/.suo
+
+# vscode settings
+.vscode/
+.vs/

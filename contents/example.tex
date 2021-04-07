@@ -1,8 +1,8 @@
-\chapter{使用样例}
+\chapter{使用样例\label{ch:excample}}
 \section{系统起动}
 \begin{itemize}
-	\item 在桌面找到\lstinline{multimeter.exe}的快捷方式
-	\item 在安装路径根目录找到\lstinline{multimeter.exe}应用程序
+	\item 在桌面找到\textcolor{red}{multimeter.exe}的快捷方式
+	\item 在安装路径根目录找到\textcolor{red}{multimeter.exe}应用程序
 \end{itemize}
 以上两种方式均可打开本软件。
 \section{用户登录\label{subsec:Advance}}
@@ -12,16 +12,16 @@
 	\item 高级用户
 \end{itemize}
 使用者可通过下拉选项选择。
-相对\lstinline{普通用户}，\lstinline{高级用户}可以进行更多系统级的设置。
-在对应栏输入账号密码后，按\lstinline{确认登录}按钮即可进入测试方法选择，
-按\lstinline{取消登录}按钮会直接退出本软件(见\figref{fig:exmp_login})。
-\begin{figure}[htbp]
+相对\textcolor{red}{普通用户}，\textcolor{red}{高级用户}可以进行更多系统级的设置。
+在对应栏输入账号密码后，按\textcolor{red}{确认登录}按钮即可进入测试方法选择，
+按\textcolor{red}{取消登录}按钮会直接退出本软件(见\figref{fig:exmp_login})。
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{example/login.png}
 	\caption{ 用户登录 \label{fig:exmp_login}}
 \end{figure}
 \begin{note}
-	当前版本不支持用户的注册。在当前版本中\lstinline{普通用户}无需账号密码即可登录，\lstinline{高级用户}的账号密码均为\lstinline{admin}。
+	当前版本不支持用户的注册。在当前版本中\textcolor{red}{普通用户}无需账号密码即可登录，\textcolor{red}{高级用户}的账号密码均为\textcolor{red}{admin}。
 \end{note}
 
 \input{contents/example_KAPPA}
@@ -29,51 +29,54 @@
 \input{contents/example_ITM}
 \input{contents/example_ITMS}
 
-\section{高级设置（出厂已设置好，不要随意更改）}
-\subsection{高级用户模式登录}
-打开本软件后，首先要选择\lstinline{高级用户}模式并登录。\lstinline{高级用户}的账号密码均为\lstinline{admin}，
-详见\ref{subsec:Advance}一节。
-\subsection{测试方法选择}
-高级模式下的参数修改，可以选择任意一种测试方法进入（见\figref{fig:advance_chooseMethod}）。
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=1\textwidth]{example/Advance/chooseMethod.png}
-	\caption{ 测试方法选择\label{fig:advance_chooseMethod}}
-\end{figure}
+% \section{高级设置}
+% \begin{note}
+% 	出厂已设置好，不要随意更改。
+% \end{note}
+% \subsection{高级用户模式登录}
+% 打开本软件后，首先要选择\textcolor{red}{高级用户}模式并登录。\textcolor{red}{高级用户}的账号密码均为\textcolor{red}{admin}，
+% 详见\ref{subsec:Advance}一节。
+% \subsection{测试方法选择}
+% 高级模式下的参数修改，可以选择任意一种测试方法进入（见\figref{fig:advance_chooseMethod}）。
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=1\textwidth]{example/Advance/chooseMethod.png}
+% 	\caption{ 测试方法选择\label{fig:advance_chooseMethod}}
+% \end{figure}
 
-\subsection{参数设置}
-\lstinline{高级用户}可以设置全部实验条件信息，包括设置热流量计和试件的测温探头位置、通道编号、
-样品截面积和加载压力等信息，设置完成按\lstinline{确认参数}按钮保存（见\figref{fig:advance_changePara}）。
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=1\textwidth]{example/Advance/changePara.png}
-	\caption{ 修改参数 \label{fig:advance_changePara}}
-\end{figure}
+% \subsection{参数设置}
+% \textcolor{red}{高级用户}可以设置全部实验条件信息，包括设置热流量计和试件的测温探头位置、通道编号、
+% 样品截面积和加载压力等信息，设置完成按\textcolor{red}{确认参数}按钮保存（见\figref{fig:advance_changePara}）。
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=1\textwidth]{example/Advance/changePara.png}
+% 	\caption{ 修改参数 \label{fig:advance_changePara}}
+% \end{figure}
 
-\subsection{串口设置}
-\lstinline{高级用户}可以设置串口编号、波特率和保存数据间隔等，
-设置完成按\lstinline{确认}按钮保存（见\figref{fig:advance_serialPort}）。
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=1\textwidth]{example/Advance/serialPort.png}
-	\caption{ 设置串口 \label{fig:advance_serialPort}}
-\end{figure}
+% \subsection{串口设置}
+% \textcolor{red}{高级用户}可以设置串口编号、波特率和保存数据间隔等，
+% 设置完成按\textcolor{red}{确认}按钮保存（见\figref{fig:advance_serialPort}）。
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=1\textwidth]{example/Advance/serialPort.png}
+% 	\caption{ 设置串口 \label{fig:advance_serialPort}}
+% \end{figure}
 
-\subsection{标定参数设置}
-\lstinline{高级用户}可以设置测温探头类型、标定参数等信息。不用的类型的
-测温探头，有对应的拟合标定方程。输入对应的标定按\lstinline{确认修改}按
-钮保存（见\figref{fig:advance_settingPara}）。
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=1\textwidth]{example/Advance/settingPara.png}
-	\caption{ 标定设置 \label{fig:advance_settingPara}}
-\end{figure}
-设置成功之后，之前的旧版本标定参数会备份在相关路径（见\figref{fig:advance_backupPara}）。
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=1\textwidth]{example/Advance/backupPara.png}
-	\caption{ 备份路径 \label{fig:advance_backupPara}}
-\end{figure}
+% \subsection{标定参数设置}
+% \textcolor{red}{高级用户}可以设置测温探头类型、标定参数等信息。不用的类型的
+% 测温探头，有对应的拟合标定方程。输入对应的标定按\textcolor{red}{确认修改}按
+% 钮保存（见\figref{fig:advance_settingPara}）。
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=1\textwidth]{example/Advance/settingPara.png}
+% 	\caption{ 标定设置 \label{fig:advance_settingPara}}
+% \end{figure}
+% 设置成功之后，之前的旧版本标定参数会备份在相关路径（见\figref{fig:advance_backupPara}）。
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=1\textwidth]{example/Advance/backupPara.png}
+% 	\caption{ 备份路径 \label{fig:advance_backupPara}}
+% \end{figure}
 
 
 
