@@ -4,4 +4,277 @@
 
 % todo 配置文件说明
 \section{配置文件}
+\par 本软件采用\textcolor{red}{ini}文件作为配置文件，ini文件总是将章节（section），键（key），值（value）以特定格式组合在一起：
+\begin{lstlisting}
+    [section]
+    key1 = value1
+    key2 = value2
+\end{lstlisting}
+\par 下面的说明将按照section依次进行，对于key--value的说明按以下格式进行：
+\begin{definition}{key}{}
+    \begin{itemize}
+        \item[value的说明] 
+        \item[value的允许值] 
+        \item[value的备注] （可能没有该项） 
+    \end{itemize}
+\end{definition}
 
+\begin{tips}{配置文件}{configFIle}
+    配置文件直接影响着程序的运行，请勿随意修改，本章节的设立是希望软件的维护者对本软件有更清楚的认识，便于其进行维护工作。若要修改，请提前做好备份。
+\end{tips}
+\subsection{sys.ini}
+
+sys.ini文件是目前本软件具有的唯一配置文件。
+\subsubsection*{Serial}
+串口设置
+\begin{definition}{port}{}
+    \begin{itemize}
+        \item[说明] 串口类型
+        \item[允许值] COM1至COM8
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{baudrate}{}
+    \begin{itemize}
+        \item[说明] 串口波特率
+        \item[允许值] 4800, 9600, 14400, 19200, 38400, 57600, 115200
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{databits}{}
+    \begin{itemize}
+        \item[说明] 每个字节的标准数据位长度
+        \item[允许值] 4,5,6,7,8
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{stopbites}{}
+    \begin{itemize}
+        \item[说明] 每个字节的标准停止位数
+        \item[允许值] One, OnePointFive, Two
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{parity}{}
+    \begin{itemize}
+        \item[说明] 奇偶校验检查协议
+        \item[允许值] Enen, Mark, None, Odd, Space
+    \end{itemize}
+\end{definition}
+
+\subsubsection*{SYS}
+
+系统设置
+
+\begin{definition}{scanInterval}{}
+    \begin{itemize}
+        \item[说明] 单个通道扫描间隔
+        \item[允许值] 单位为毫秒，大于scanIntervalLb，小于scanIntervalUb
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{scanIntervalLb}{}
+    \begin{itemize}
+        \item[说明] 单个通道扫描间隔设置下限
+        \item[允许值] 单位为毫秒，小于scanIntervalUb
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{scanIntervalUb}{}
+    \begin{itemize}
+        \item[说明] 单个通道扫描间隔设置上限
+        \item[允许值] 单位为毫秒，大于scanIntervalLb
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{saveInterval}{}
+    \begin{itemize}
+        \item[说明] 数据保存间隔
+        \item[允许值] 单位为毫秒，大于saveIntervalLb，小于saveIntervalUb
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{saveIntervalLb}{}
+    \begin{itemize}
+        \item[说明] 数据保存间隔设置下限
+        \item[允许值] 单位为毫秒，小于saveIntervalUb
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{saveIntervalUb}{}
+    \begin{itemize}
+        \item[说明] 数据保存间隔设置上限
+        \item[允许值] 单位为毫秒，大于saveIntervalLb
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{autoSaveInterval}{}
+    \begin{itemize}
+        \item[说明] 温度数据收敛后多长时间自动停止测试
+        \item[允许值] 单位为毫秒，不要太小
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{convergentLim}{}
+    \begin{itemize}
+        \item[说明] 温度数据收敛判断容差
+        \item[允许值] 不要太小
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{alloweChannel}{}
+    \begin{itemize}
+        \item[说明] 允许使用的通道
+        \item[允许值] 通道没之间以逗号连接，必须包含*，其他通道在101--140或201-240之间
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{tempLb}{}
+    \begin{itemize}
+        \item[说明] 测试容许温度下限
+        \item[允许值] 单位$^{\circ}C$，0$^{\circ}C$左右
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{tempUb}{}
+    \begin{itemize}
+        \item[说明] 测试容许温度上限
+        \item[允许值] 单位$^{\circ}C$，100$^{\circ}C$左右
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{method}{}
+    \begin{itemize}
+        \item[说明] 测试方法
+        \item[允许值] KAPPA，ITC，ITM，ITMS
+    \end{itemize}
+\end{definition}
+
+\subsubsection*{Card\#}
+采集仪第\#张板卡的属性
+\begin{definition}{enable}{}
+    \begin{itemize}
+        \item[说明] 板卡是否使用
+        \item[允许值] 0,1
+        \item[备注] 0--不使用，1--使用 
+    \end{itemize}
+\end{definition}
+
+\subsubsection*{101--140,201--240}
+
+采集频道及所连接的探头属性
+
+\begin{definition}{type}{}
+    \begin{itemize}
+        \item[说明] 采集频道及所连接的探头类型
+        \item[允许值] 0,1,2,3
+        \item[备注] 0--未连接探头，1--电压探头，2--K型热电偶，3--四线电阻 
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{type}{}
+    \begin{itemize}
+        \item[说明] 采集频道及所连接的探头工作方式
+        \item[允许值] 0,1,2,3
+        \item[备注] 0--不工作，1--按电压探头工作，2--按K型热电偶工作，3--按四线电阻工作 
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{A\#}{}
+    \begin{itemize}
+        \item[说明] 采集频道及所连接的探头的第\#个标定参数
+    \end{itemize}
+\end{definition}
+
+\subsubsection*{HeatMeter\#}
+第\#个热流计的属性
+\begin{definition}{kappa}{}
+    \begin{itemize}
+        \item[说明] 热流计热导率
+        \item[允许值] 单位$W/(m\cdot K)$，大于0
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{area}{}
+    \begin{itemize}
+        \item[说明] 热流计横截面积
+        \item[允许值] 单位$mm^2$，大于0
+    \end{itemize}
+\end{definition}
+\subsubsection*{HeatMeter\#.\$}
+第\#个热流计的从上至下第\$个测试点位的位置。
+
+\begin{definition}{channel}{}
+    \begin{itemize}
+        \item[说明] 测试点位连接的频道
+        \item[允许值] 101--140，201--240或*
+    \end{itemize}
+\end{definition}
+\begin{definition}{position}{}
+    \begin{itemize}
+        \item[说明] 测试点位的位置坐标
+        \item[允许值] 单位$mm$，大于0或*
+    \end{itemize}
+\end{definition}
+
+\subsubsection*{Sample\#}
+第\#个试件的属性
+
+\begin{definition}{area}{}
+    \begin{itemize}
+        \item[说明] 试件横截面积
+        \item[允许值] 单位$mm^2$，大于0
+    \end{itemize}
+\end{definition}
+
+\subsubsection*{Sample\#.\$}
+第\#个试件的从上至下第\$个测试点位的位置。
+
+\begin{definition}{channel}{}
+    \begin{itemize}
+        \item[说明] 测试点位连接的频道
+        \item[允许值] 101--140，201--240或*
+    \end{itemize}
+\end{definition}
+\begin{definition}{position}{}
+    \begin{itemize}
+        \item[说明] 测试点位的位置坐标
+        \item[允许值] 单位$mm$，大于0或*
+    \end{itemize}
+\end{definition}
+
+\subsubsection*{ITM}
+界面材料属性
+\begin{definition}{thickness}{}
+    \begin{itemize}
+        \item[说明] 界面材料厚度
+        \item[允许值] 单位$\mu m$，大于0
+    \end{itemize}
+\end{definition}
+\begin{definition}{area}{}
+    \begin{itemize}
+        \item[说明] 界面材料横截面积
+        \item[允许值] 单位$mm^2$，大于0
+    \end{itemize}
+\end{definition}
+
+\subsubsection*{Pressure}
+系统采用的压力
+\begin{definition}{force}{}
+    \begin{itemize}
+        \item[说明] 界面施加的压力
+        \item[允许值] 单位$kg$，大于0
+    \end{itemize}
+\end{definition}
+
+\subsection{*.rst文件}
+*.rst文件实际上是一种特殊的配置文件，除以上sys.ini内的内容外，其还包括计算结果所需的测试数据。
+
+\subsubsection*{Data}
+测试数据
+\begin{definition}{\#}{}
+    \begin{itemize}
+        \item[说明] 第\#组数据
+        \item[备注] 单位$^{\circ}C$，数据之间以逗号隔开。
+    \end{itemize}
+\end{definition}
