@@ -736,13 +736,13 @@
 			\ifdefstring{\ELEGANT@lang}{en}{\textbf{Version:}}{ 版本：} \the\version\\
 		\end{tabular}}
 	\end{minipage}
-	\begin{minipage}[c]{0.27\linewidth}
-	\begin{tikzpicture}[remember picture,overlay]
-		\begin{pgfonlayer}{background}
-		  \node[opacity=0.8,anchor=south east,outer sep=0pt,inner sep=0pt] at ($(current page.south east) +(-0.8in,1.5in)$) {\@logo};
-		\end{pgfonlayer}
-	\end{tikzpicture}
-	\end{minipage}
+	% \begin{minipage}[c]{0.27\linewidth}
+	% \begin{tikzpicture}[remember picture,overlay]
+	% 	\begin{pgfonlayer}{background}
+	% 	  \node[opacity=0.8,anchor=south east,outer sep=0pt,inner sep=0pt] at ($(current page.south east) +(-0.8in,1.5in)$) {\@logo};
+	% 	\end{pgfonlayer}
+	% \end{tikzpicture}
+	% \end{minipage}
 	\vfill
 	\begin{center}
 	\setstretch{1.3}
