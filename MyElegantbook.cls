@@ -667,7 +667,8 @@
 \fancyhead[OL]{\color{structurecolor}\ifdefstring{\ELEGANT@lang}{en}{\itshape}\rightmark}
 \else
 \fancyhead[R]{\color{structurecolor}\ifdefstring{\ELEGANT@lang}{en}{\itshape}--\thepage/\pageref*{LastPage}--}
-\fancyhead[L]{\color{structurecolor}\ifdefstring{\ELEGANT@lang}{en}{\itshape}\rightmark}
+%\fancyhead[L]{\color{structurecolor}\ifdefstring{\ELEGANT@lang}{en}{\itshape}\rightmark}
+\fancyhead[L]{\color{structurecolor}\@title-\the\version}
 \fi
 
 \fancyfoot[c]{\base{structurecolor}{88}}
@@ -730,7 +731,7 @@
 		{\renewcommand{\arraystretch}{0.618}
 		\begin{tabular}{l} 
 			\ifdefstring{\ELEGANT@lang}{en}{\textbf{Author:}}{ 作者：} \@author \\
-			\ifdefstring{\ELEGANT@lang}{en}{\textbf{Institute:}}{ 组织：} \the\institute\\
+			%%\ifdefstring{\ELEGANT@lang}{en}{\textbf{Institute:}}{ 组织：} \the\institute\\
 			\ifdefstring{\ELEGANT@lang}{en}{\textbf{Date:}}{ 时间：} \@date\\
 			\ifdefstring{\ELEGANT@lang}{en}{\textbf{Version:}}{ 版本：} \the\version\\
 		\end{tabular}}
